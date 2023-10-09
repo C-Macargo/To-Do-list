@@ -1,16 +1,20 @@
-import TodoListContainer from "./components/TodoListContainer";
+import styled from "styled-components";
+import ToDoListContainer from "./components/TodoListContainer";
 
 function App() {
-  return (
-      <div className="flex justify-center items-center min-h-screen bg-purple-500">
-          <div className="bg-green-500 inline-block">
-              <h1 className="text-2xl text-center font-bold mb-4">To Do List</h1>
-              <TodoListContainer/>
-          </div>
-      </div>
-  );
+	return (	
+            <StyledBody>
+			<ToDoListContainer />
+            </StyledBody>
+	);
 }
-
 
 export default App;
 
+const StyledBody = styled.div`
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`

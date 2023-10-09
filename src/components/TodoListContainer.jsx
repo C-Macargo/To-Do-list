@@ -1,40 +1,29 @@
-import { useState } from "react";
+import styled from "styled-components"
 
-function TodoListContainer() {
-    return (
-        <div className="flex-col p-4  w-96 min-h-96 bg-black text-white">
-            <ListItem/>
-        </div>
-    );
-  }
-export default TodoListContainer
-
-
-function ListItem(){
-    return(
-        <div className="flex justify-between">
-            <p></p>
-            <CustomCheckbox></CustomCheckbox>
-        </div>
-    )
+function ToDoListContainer(){
+  return(
+    <MainContainer>
+      <TitleContainer>
+        <h1>To-Do-List</h1>
+      </TitleContainer>
+    </MainContainer>
+  )
 }
 
-
-function CustomCheckbox() {
-    const [isChecked, setIsChecked] = useState(false);
-  
-    return (
-      <div className="flex items-center space-x-2 cursor-pointer" onClick={() => setIsChecked(!isChecked)}>
-        <div className={`w-6 h-6 border rounded flex items-center justify-center ${isChecked ? 'bg-green-400' : 'bg-white'}`}>
-          {isChecked && (
-            <div className="text-center w-5 h-5">
-              x
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
-  
+export default ToDoListContainer
 
 
+
+const MainContainer = styled.div`
+  display:flex;
+  flex-direction:column;
+  width:600px;
+  height:600px;
+  background-color:purple;
+`
+
+const TitleContainer = styled.div`
+  display:flex;
+  align-items:center;
+  justify-content:center;
+`
